@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Arithmetic Drills</string>
+    <string name="welcome">Welcome \n to Arithmetic Drills</string>
+    <string name="solve_10_questions">Solve 10 questions per session\nand improve your math skills</string>
+    <string name="track_progress">Track Progress \n Check Your Scores</string>
+    <string name="view_results">View your results after each session\nand see how you improve</string>
+    <string name="challenge_friends">Challenge Friend \n Have Fun Together</string>
+    <string name="share_score">Share your scores with friends\nand compete in multiplayer mode</string>
+</resources>
