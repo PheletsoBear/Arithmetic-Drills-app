@@ -20,6 +20,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
@@ -41,6 +42,8 @@ fun OnBoardingScreen(
     navController: NavController
 ) {
     val viewModel: MainViewModel = hiltViewModel()
+    val configuration = LocalConfiguration.current
+    val isLandscape = configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -66,7 +69,7 @@ fun OnBoardingScreen(
             OnBoardingPage(
                 page = pages[index],
                modifier = Modifier
-                   .fillMaxHeight(fraction = 0.6f)
+                   .fillMaxHeight(if (isLandscape) 0.5f else 0.6f)
                    .fillMaxWidth()
             )
         }
@@ -122,4 +125,13 @@ fun OnBoardingScreen(
         Spacer(modifier = Modifier.weight(1f))
     }
 }
+
+//@Preview (showBackground = true)
+//@Preview (showBackground = false, uiMode = Configuration.UI_MODE_NIGHT_YES)
+//@Composable
+//private fun OnBoardingScreenPreview(){
+//    ArithmeticDrillsTheme {
+//        OnBoardingScreen()
+//    }
+//}
 
