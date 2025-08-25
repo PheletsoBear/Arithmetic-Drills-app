@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.runtime.Composable
@@ -21,17 +20,14 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.arithmeticdrills.MainViewModel
-import com.example.arithmeticdrills.common.BackTextButton
-import com.example.arithmeticdrills.common.NextButton
+import com.example.arithmeticdrills.common.buttons.BackTextButton
+import com.example.arithmeticdrills.common.buttons.NextButton
 import com.example.arithmeticdrills.presentation.onBoarding.components.OnBoardingPage
 import com.example.arithmeticdrills.presentation.onBoarding.components.PageIndicator
-import com.example.arithmeticdrills.ui.theme.ArithmeticDrillsTheme
 import com.example.arithmeticdrills.util.Dimens
-import com.loc.newsapp.data.manager.LocalUserManager
 import com.loc.newsapp.presentation.navigation.Route
 import kotlinx.coroutines.launch
 

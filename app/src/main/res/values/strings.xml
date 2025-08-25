@@ -6,4 +6,6 @@
     <string name="view_results">View your results after each session\nand see how you improve</string>
     <string name="challenge_friends">Challenge Friend \n Have Fun Together</string>
     <string name="share_score">Share your scores with friends\nand compete in multiplayer mode</string>
+    <string name="back_content_description">back</string>
+    <string name="menu_content_description">menu</string>
 </resources>

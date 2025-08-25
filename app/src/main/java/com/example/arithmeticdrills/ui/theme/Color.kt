@@ -3,6 +3,7 @@ package com.example.arithmeticdrills.ui.theme
 import androidx.compose.ui.graphics.Color
 
 val Blue = Color(0xFF1877F2)
+val ToolbarBackground = Color(0xFF2196F3)
 val DarkRed = Color(0xFFC30052) //Dark Error
 val LightRed = Color(0xFFFF84B7)
 val LightBlack = Color(0xFF3A3B3C) //Dark Surface

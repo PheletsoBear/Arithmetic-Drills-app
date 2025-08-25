@@ -1,8 +1,15 @@
 package com.example.arithmeticdrills.presentation.onBoarding
 
-import com.example.arithmeticdrills.R
 import androidx.annotation.DrawableRes
-import androidx.annotation.StringRes
+import com.example.arithmeticdrills.R
+import com.loc.newsapp.util.Constants.OnboardingDesc1
+import com.loc.newsapp.util.Constants.OnboardingDesc2
+import com.loc.newsapp.util.Constants.OnboardingDesc3
+import com.loc.newsapp.util.Constants.OnboardingDesc4
+import com.loc.newsapp.util.Constants.OnboardingTitle1
+import com.loc.newsapp.util.Constants.OnboardingTitle2
+import com.loc.newsapp.util.Constants.OnboardingTitle3
+import com.loc.newsapp.util.Constants.OnboardingTitle4
 
 data class Page (
      val title: String,
@@ -12,16 +19,20 @@ data class Page (
 
 val pages = listOf(
     Page(
-        title = "Ready to drill?",
-        description = "Solve 10 questions per session and improve your math skills",
+        title = OnboardingTitle1,
+        description = OnboardingDesc1,
         image = R.drawable.onboarding1
     ),
     Page(
-        title = "Track Progress",
-        description ="View your results after each session and see how you improve",
+        title = OnboardingTitle2,
+        description =OnboardingDesc2,
         image = R.drawable.onboarding2),
     Page(
-        title = "Multiplayer mode",
-        description = "Share your scores with friends and compete in multiplayer mode",
-        image = R.drawable.onboarding3)
+        title = OnboardingTitle3,
+        description = OnboardingDesc3,
+        image = R.drawable.onboarding3),
+    Page(
+        title = OnboardingTitle4,
+        description = OnboardingDesc4,
+        image = R.drawable.onboarding4)
 )
