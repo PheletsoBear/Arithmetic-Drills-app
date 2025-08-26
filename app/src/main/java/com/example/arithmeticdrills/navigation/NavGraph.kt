@@ -11,8 +11,7 @@ import com.loc.newsapp.data.manager.LocalUserManager
 
 @Composable
 fun NavGraph(
-    startDestination: String,
-    localUserManager: LocalUserManager
+    startDestination: String
 ) {
     val navController = rememberNavController()
 
