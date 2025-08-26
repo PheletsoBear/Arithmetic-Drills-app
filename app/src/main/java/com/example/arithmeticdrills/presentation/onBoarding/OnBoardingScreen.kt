@@ -1,8 +1,6 @@
 package com.example.arithmeticdrills.presentation.onBoarding
 
-import android.annotation.SuppressLint
 import android.content.res.Configuration
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -20,19 +18,20 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.arithmeticdrills.MainViewModel
 import com.example.arithmeticdrills.common.buttons.BackTextButton
 import com.example.arithmeticdrills.common.buttons.NextButton
 import com.example.arithmeticdrills.presentation.onBoarding.components.OnBoardingPage
 import com.example.arithmeticdrills.presentation.onBoarding.components.PageIndicator
+import com.example.arithmeticdrills.ui.theme.ArithmeticDrillsTheme
 import com.example.arithmeticdrills.util.Dimens
 import com.loc.newsapp.presentation.navigation.Route
 import kotlinx.coroutines.launch
 
-@SuppressLint("RememberReturnType")
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun OnBoardingScreen(
     navController: NavController
@@ -122,12 +121,13 @@ fun OnBoardingScreen(
     }
 }
 
-//@Preview (showBackground = true)
-//@Preview (showBackground = false, uiMode = Configuration.UI_MODE_NIGHT_YES)
-//@Composable
-//private fun OnBoardingScreenPreview(){
-//    ArithmeticDrillsTheme {
-//        OnBoardingScreen()
-//    }
-//}
+@Preview(showBackground = true)
+@Preview (showBackground = false, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+private fun OnBoardingScreenPreview(){
+    val navController = rememberNavController()
+    ArithmeticDrillsTheme {
+        OnBoardingScreen(navController)
+    }
+}
 
