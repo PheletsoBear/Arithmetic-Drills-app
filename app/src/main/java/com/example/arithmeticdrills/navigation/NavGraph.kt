@@ -6,6 +6,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.arithmeticdrills.presentation.home.HomeScreen
 import com.example.arithmeticdrills.presentation.onBoarding.OnBoardingScreen
+import com.example.arithmeticdrills.presentation.session.SessionScreen
 import com.loc.newsapp.data.manager.LocalUserManager
 
 
@@ -24,6 +25,9 @@ fun NavGraph(
         }
         composable(route = Route.HomeScreen.route) {
             HomeScreen(navController)
+        }
+        composable(route = Route.SessionScreen.route){
+            SessionScreen(navController)
         }
     }
 }

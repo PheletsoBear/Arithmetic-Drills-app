@@ -14,6 +14,10 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -27,20 +31,29 @@ import androidx.navigation.compose.rememberNavController
 import com.example.arithmeticdrills.R
 import com.example.arithmeticdrills.common.buttons.BackTextButton
 import com.example.arithmeticdrills.common.buttons.NextButton
-import com.example.arithmeticdrills.common.toolbar.MyToolbar
+import com.example.arithmeticdrills.common.toolbar.ArithmeticDrillToolbar
 import com.example.arithmeticdrills.ui.theme.ArithmeticDrillsTheme
 import com.example.arithmeticdrills.util.Dimens
+import com.loc.newsapp.presentation.navigation.Route
 
 @Composable
 fun HomeScreen(navController: NavController) {
+
+    var selectedLanguage by remember { mutableStateOf("English") }
+
     Scaffold(
-        topBar = { MyToolbar(
-            title = stringResource(R.string.app_name),
-            onBackClick = {},
-            showBackButton = false,
-            onShareClick = {},
-            onLanguageClick = {}
-        ) }
+        topBar = {
+            ArithmeticDrillToolbar(
+                title = stringResource(R.string.app_name),
+                onBackClick = {},
+                showBackButton = false,
+                onShareClick = {},
+                onLanguageClick = {
+                    selectedLanguage = it
+                },
+                icon = painterResource(id = R.drawable.ic_language),
+                selectedLanguage = selectedLanguage
+            ) }
     ) {
       val verticalScrollState = rememberScrollState()
         Column(
@@ -60,7 +73,7 @@ fun HomeScreen(navController: NavController) {
                 contentScale = ContentScale.Inside
             )
 
-            Spacer(modifier = Modifier.height(Dimens.large*3))
+            Spacer(modifier = Modifier.height(Dimens.large*2))
 
                 NextButton(
                     text = stringResource(R.string.join_a_friend),
@@ -71,10 +84,12 @@ fun HomeScreen(navController: NavController) {
                     icon = ImageVector.vectorResource(id = R.drawable.ic_bluetooth),
                     contentDescription = ""
                 )
+
                 Spacer(modifier = Modifier.height(Dimens.medium))
+
                 NextButton(
                     text = stringResource(R.string.play),
-                    onClick = {},
+                    onClick = {navController.navigate(route = Route.SessionScreen.route)},
                     modifier = Modifier
                         .fillMaxWidth(0.9f)
                         .height(Dimens.large*2),
@@ -97,7 +112,6 @@ fun HomeScreen(navController: NavController) {
                 )
             }
         }
-
     }
 }
 
