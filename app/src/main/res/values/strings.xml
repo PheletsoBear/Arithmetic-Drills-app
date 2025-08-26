@@ -8,4 +8,9 @@
     <string name="share_score">Share your scores with friends\nand compete in multiplayer mode</string>
     <string name="back_content_description">back</string>
     <string name="menu_content_description">menu</string>
+    <string name="play">PLAY!</string>
+    <string name="leader_board">Leader Board</string>
+    <string name="instructions">Instructions</string>
+    <string name="join_a_friend">Join a friend</string>
+
 </resources>
